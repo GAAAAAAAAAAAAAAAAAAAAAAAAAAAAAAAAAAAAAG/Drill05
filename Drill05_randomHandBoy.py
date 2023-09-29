@@ -30,10 +30,10 @@ def move_towards_target():
         angle = math.atan2(target_y - y, target_x - x)
         x += speed * math.cos(angle)
         y += speed * math.sin(angle)
+        direction = 1 if target_x > x else 0
     else:
         x, y = target_x, target_y
         target_x, target_y = random.randint(0, TUK_WIDTH), random.randint(0, TUK_HEIGHT)
-        direction = 1 if target_x > x else 0
 
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
